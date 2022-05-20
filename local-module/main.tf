@@ -31,17 +31,36 @@ module "vpc" {
 }
 
 module "security-group" {
-  source      = "./modules/security-group"
+  source      = "./modules/aws-security-group"
   security_group_name        = "my-sg"
   security_group_description = "security group created from module"
   vpc_id      = module.vpc.vpc_id
+  
+}
+
+module "security-group-rule" {
+  source      = "./modules/aws-security-group-rule"
   protocol = "tcp"
   rule_type = "ingress"
   from_port = 8080
   to_port = 8080
   cidr_blocks = "0.0.0.0/0"
+  security_group_id = module.security-group.id
   
 }
+
+module "security-group-rule" {
+  source      = "./modules/aws-security-group-rule"
+  protocol = "tcp"
+  rule_type = "ingress"
+  from_port = 22
+  to_port = 22
+  cidr_blocks = "0.0.0.0/0"
+  security_group_id = module.security-group.id
+  
+}
+
+
 
 module "ec2-instance" {
   source                 = "terraform-aws-modules/ec2-instance/aws"

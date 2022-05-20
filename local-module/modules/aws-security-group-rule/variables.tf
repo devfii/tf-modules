@@ -1,18 +1,3 @@
-variable "security_group_name" {
-  type        = string
-  description = "Name of the security group"
-}
-
-variable "security_group_description" {
-  type        = string
-  description = "Description for security group to be created"
-}
-
-variable "vpc_id" {
-  type        = string
-  description = "VPC in which security group should be created"
-}
-
 
 variable "rule_type" {
   type        = string
@@ -56,3 +41,9 @@ variable "cidr_blocks" {
 #  type        = string
 #  description = "IPv6 CIDR block"
 #}
+
+variable "security_group_id" {
+    type = string
+    description = "Security group ID"
+  
+}
