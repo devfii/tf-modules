@@ -13,4 +13,11 @@ variable "vpc_id" {
   description = "VPC in which security group should be created"
 }
 
-
+variable "security_group_tags" {
+  description = "Tags to be applied to resources created by configuration "
+  type        = map(string)
+  default = {
+    Environment = "dev"
+    terraform   = "True"
+  }
+}
