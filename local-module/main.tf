@@ -49,7 +49,7 @@ module "security-group-rule" {
   
 }
 
-module "security-group-rule" {
+module "security-group-rule-2" {
   source      = "./modules/aws-security-group-rule"
   protocol = "tcp"
   rule_type = "ingress"
