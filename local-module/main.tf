@@ -40,8 +40,8 @@ module "security-group" {
 
 module "security-group-rule" {
   source      = "./modules/aws-security-group-rule"
-  protocol = "tcp"
-  rule_type = "ingress"
+  protocol = var.sg_tcp_protocol
+  rule_type = var.sg_ingress_rule_type
   from_port = 8080
   to_port = 8080
   cidr_blocks = "0.0.0.0/0"
@@ -51,8 +51,8 @@ module "security-group-rule" {
 
 module "security-group-rule-2" {
   source      = "./modules/aws-security-group-rule"
-  protocol = "tcp"
-  rule_type = "ingress"
+  protocol = var.sg_tcp_protocol
+  rule_type = var.sg_ingress_rule_type
   from_port = 22
   to_port = 22
   cidr_blocks = "0.0.0.0/0"

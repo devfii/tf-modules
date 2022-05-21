@@ -7,3 +7,8 @@ output "ec2_instance_public_ips" {
   description = "Public IP addresses of EC2 instances"
   value       = module.ec2-instance[*].public_ip
 }
+
+output "security_group_id" {
+  description = "Security group Id"
+  value = module.security-group.id
+}

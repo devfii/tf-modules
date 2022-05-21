@@ -74,4 +74,18 @@ variable "ec2-instance_ami" {
 
 }
 
+variable "sg_ingress_rule_type" {
+  type = string
+  description = "value for ingress rule type"
+  default = "ingress"
+  
+}
+
+variable "sg_tcp_protocol" {
+  type = string
+  description = "value for tcp protocol"
+  default = "tcp"
+  
+}
+
 
