@@ -9,5 +9,3 @@ The modules folder consists of the following modules:
 - Security Group Rule
 
 The two modules are used in the Terraform configuration to create a security group and rules.
-
-This repo is a companion repo to [Understanding Terraform Modules](https://medium.com/@emmanuelkoomson).
